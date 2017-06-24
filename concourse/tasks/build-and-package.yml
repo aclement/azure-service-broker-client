@@ -1,0 +1,9 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  repository: java
+  tag: "8"
+
+run:
+  path: azure-service-broker-client/concourse/tasks/build-and-package.sh

@@ -1,0 +1,15 @@
+resources:
+- name: sources
+  type: git
+  source:
+    uri: git@github.com:aclement/azure-service-broker-client
+    branch: concourse
+######
+jobs:
+- name: build-and-package
+  plan:
+  - get: sources
+    trigger: true
+  - task: build-and-package
+    file: azure-service-broker-client/concourse/tasks/build-and-package.yml
+
